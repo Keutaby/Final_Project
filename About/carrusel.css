@@ -1,0 +1,246 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html{
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    font-size: 62.5%;
+}
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #488cd4;
+    padding: 2rem 9%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 .5rem 1rem #8daeff;
+    z-index: 1000;
+}
+h1{
+    font-size: 40px;
+    text-align: center;
+    color: #9bcbff;
+    margin: 20px;
+    padding: 5px;
+    border-radius: 5px;
+    background: #1b6bc2;
+}
+.logo img{
+    width: 150px;
+}
+.navbar{
+    margin-left: 150px;
+}
+.navbar a{
+    font-size: 40px;
+    padding: 0px 24px;
+    color: #000;
+    text-decoration: none;
+    margin-right: 30px;
+    font-family: 'Playpen Sans', cursive;
+}
+.navbar a:hover{
+    color: #8daeff;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    background: #38668b;
+}
+img{
+    max-width: 100%;
+}
+p{
+    color: rgb(192, 192, 192);
+    font-size: 20px;
+    background: #44448769;
+    margin-top: 5px;
+}
+.end{
+    font-size: 30px;
+    text-align: center;
+    margin-top: 5px;
+}
+h2{
+    font-size: 20px;
+    text-align: center;
+    color: #9bcbff;
+    margin: 20px;
+    padding: 5px;
+    border-radius: 5px;
+    background: #1b6bc2;
+}
+.socials{
+    align-items: center;
+    width: 200px;
+    display: inline-flex;
+    margin-left: 200px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-bottom: .2rem solid #fff;
+}
+.face{
+    margin-left: 25px;
+}
+.face:hover{
+    transform: translateY(-6px);
+}
+.insta:hover{
+    transform: translateY(-6px);
+}
+
+.container-all{
+    position: relative;
+    max-width: 600px;
+    width: 100%;
+    overflow: hidden;
+    margin-top: 200px;
+}
+.slide{
+    display: flex;
+    transform: translate3d(0,0,0);
+    transition: all 600ms;
+    animation-name: autoplay;
+    animation-duration: 6.5s;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+}
+.item-slide{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    flex-grow: 0;
+    max-width: 100%;
+}
+
+/*----------input 1----------*/
+input[id="1"]:checked ~ .slide{
+    animation: none;
+    transform: translate3d(0,0,0);
+}
+input[id="1"]:checked ~ .pagina .pagina-item[for="1"]{
+    background: #fff;
+}
+
+/*----------input 2----------*/
+input[id="2"]:checked ~ .slide{
+    animation: none;
+    transform: translate3d(calc(-100% * 1),0,0);
+}
+input[id="2"]:checked ~ .pagina .pagina-item[for="2"]{
+    background: #fff;
+}
+
+/*----------input 3----------*/
+input[id="3"]:checked ~ .slide{
+    animation: none;
+    transform: translate3d(calc(-100% * 2),0,0);
+}
+input[id="3"]:checked ~ .pagina .pagina-item[for="3"]{
+    background: #fff;
+}
+
+/*----------input 4----------*/
+input[id="4"]:checked ~ .slide{
+    animation: none;
+    transform: translate3d(calc(-100% * 3),0,0);
+}
+input[id="4"]:checked ~ .pagina .pagina-item[for="4"]{
+    background: #fff;
+}
+
+/*----------input 5----------*/
+input[id="5"]:checked ~ .slide{
+    animation: none;
+    transform: translate3d(calc(-100% * 4),0,0);
+}
+input[id="5"]:checked ~ .pagina .pagina-item[for="5"]{
+    background: #fff;
+}
+
+footer{
+    background-color: #38668b;
+}
+.box-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3px;
+}
+.box-container .box{
+    flex: 1 1 25rem;
+}
+.box h3{
+    color: #000;
+    font-size: 2.5rem;
+    padding: 1rem 0;
+}
+.box a{
+    color: #000;
+    font-size:  2.5rem;
+    padding: 1rem 0;
+    display: block;
+    text-decoration: none;
+}
+.box a:hover{
+    color: #5999f3;
+    text-decoration: none;
+    transform: translateY(-6px);
+}
+.credit{
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 1.5rem;
+    padding-top: 2.5rem;
+    font-size: 2rem;
+    color: #333;
+    border-top: .1rem solid #000;
+}
+.credit span{
+    color: blue;
+}
+
+@keyframes autoplay{
+    20%{transform: translate3d(calc(-100% * 0), 0, 0);}
+    40%{transform: translate3d(calc(-100% * 1), 0, 0);}
+    60%{transform: translate3d(calc(-100% * 2), 0, 0);}
+    80%{transform: translate3d(calc(-100% * 3), 0, 0);}
+    100%{transform: translate3d(calc(-100% * 4), 0, 0);}
+}
+@media (max-width: 768px){
+    .navbar{
+        width: 120px;
+    }
+    .navbar a{
+        font-size: 15px;
+    }
+    section{
+        margin-top: 0px;
+    }
+}
+@media (max-width: 390px){
+    html{
+        font-size: 50%;
+        background-color: #38668b;
+    }
+    .navbar{
+        width: 90px;
+    }
+    .navbar a{
+        font-size: 20px;
+    }
+    section{
+        margin-top: 15px;
+    }
+    .socials{
+        margin-left: 65px;
+    }
+}
